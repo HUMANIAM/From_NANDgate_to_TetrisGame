@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1503041394 source:f:\nand2tetris\nand2tetris\nand2tetris\projects\08\vmtranslator\codewriter.cpp
+	<string>
+	<string.h>
+	<fstream>
+	<cstdlib>
+	<cstdio>
+	<vector>
+	<algorithm>
+	<iostream>
+	<sstream>
+	"CodeWriter.h"
+
+1503054716 f:\nand2tetris\nand2tetris\nand2tetris\projects\08\vmtranslator\codewriter.h
+
+1503041636 source:f:\nand2tetris\nand2tetris\nand2tetris\projects\08\vmtranslator\parser.cpp
+	<iostream>
+	<string>
+	<string.h>
+	<fstream>
+	<cstdlib>
+	<cstdio>
+	<queue>
+	<vector>
+	<algorithm>
+	"Parser.h"
+	"CodeWriter.h"
+
+1503054730 f:\nand2tetris\nand2tetris\nand2tetris\projects\08\vmtranslator\parser.h
+	"CodeWriter.h"
+
+1503056510 source:f:\nand2tetris\nand2tetris\nand2tetris\projects\08\vmtranslator\vmt.cpp
+	<iostream>
+	<string>
+	<string.h>
+	<fstream>
+	<cstdlib>
+	<cstdio>
+	<queue>
+	<vector>
+	<algorithm>
+	<sstream>
+	<dirent.h>
+	"Parser.h"
+	"VMT.h"
+
+1503054743 f:\nand2tetris\nand2tetris\nand2tetris\projects\08\vmtranslator\vmt.h
+	"Parser.h"
+
+1503055798 source:f:\nand2tetris\nand2tetris\nand2tetris\projects\08\vmtranslator\main.cpp
+	<string>
+	<string.h>
+	<fstream>
+	<cstdlib>
+	<cstdio>
+	<vector>
+	<algorithm>
+	<iostream>
+	<sstream>
+	<dirent.h>
+	"VMT.h"
+

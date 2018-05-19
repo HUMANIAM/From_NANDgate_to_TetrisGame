@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1504419646 source:f:\nand2tetris\nand2tetris\nand2tetris\projects\11\jackcompiler\parser.cpp
+	<iostream>
+	<string>
+	<stdlib.h>
+	<cstring>
+	<fstream>
+	<vector>
+	<map>
+	"Parser.h"
+	"Tokenizer.h"
+
+1504435939 f:\nand2tetris\nand2tetris\nand2tetris\projects\11\jackcompiler\parser.h
+	"Tokenizer.h"
+
+1504442357 f:\nand2tetris\nand2tetris\nand2tetris\projects\11\jackcompiler\tokenizer.h
+
+1504703158 source:f:\nand2tetris\nand2tetris\nand2tetris\projects\11\jackcompiler\symboltable.cpp
+	<string>
+	<map>
+	<fstream>
+	<iostream>
+	"SymbolTable.h"
+
+1504698095 f:\nand2tetris\nand2tetris\nand2tetris\projects\11\jackcompiler\symboltable.h
+
+1504424225 source:f:\nand2tetris\nand2tetris\nand2tetris\projects\11\jackcompiler\syntaxanaylzer.cpp
+	<string>
+	<regex>
+	<stdlib.h>
+	<cstring>
+	<fstream>
+	<dirent.h>
+	<vector>
+	<map>
+	"Tokenizer.h"
+	"Parser.h"
+	"SyntaxAnaylzer.h"
+
+1504435617 f:\nand2tetris\nand2tetris\nand2tetris\projects\11\jackcompiler\syntaxanaylzer.h
+	"Tokenizer.h"
+
+1504709281 source:f:\nand2tetris\nand2tetris\nand2tetris\projects\11\jackcompiler\vmwriter.cpp
+	<iostream>
+	<map>
+	<vector>
+	<fstream>
+	<stdlib.h>
+	"SymbolTable.h"
+	"VMWriter.h"
+
+1504697969 f:\nand2tetris\nand2tetris\nand2tetris\projects\11\jackcompiler\vmwriter.h
+	"Tokenizer.h"
+	"SymbolTable.h"
+

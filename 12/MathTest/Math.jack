@@ -1,0 +1,189 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Math.jack
+
+/**
+ * A library of commonly used mathematical functions.
+ * Note: Jack compilers implement multiplication and division using OS method calls.
+ */
+class Math {
+     static Array twoTothe;
+    /** Initializes the library. */
+    function void init() {
+        var int i, n;
+        let i = 0;
+        let n = 1;
+        let twoTothe = Array.new(15);
+        //initialize the twoTothe array
+        while(i<15)
+        {
+            let twoTothe[i] = n;
+            let n = n + n;
+            let i = i + 1;
+        }
+        return;
+    }
+
+    /**this function return boolean value in specific location in value*/
+    function boolean bit(int val, int i){
+        if((twoTothe[i] & val) = 0)
+        {return false;}
+        else
+        {return true;}
+    }
+
+    /** Returns the absolute value of x. */
+    function int abs(int x) {
+       if(x<0)
+       {return -x;}
+       else
+       {return x;}
+    }
+
+    /** Returns the product of x and y. 
+     *  When a Jack compiler detects the multiplication operator '*' in the 
+     *  program's code, it handles it by invoking this method. In other words,
+     *  the Jack expressions x*y and multiply(x,y) return the same value.
+     */
+    function int multiply(int x, int y) {
+       var int sum, shiftx, i, negative;
+       let negative = 0;
+       
+       //specify the sign of the result
+       if((x<0) & (y<0)){
+         let y = -y;     let x = -x;
+       }
+       else{
+          if(x<0){
+            let negative = 1;
+            let x = -x;
+        }
+        if(y<0){
+            let negative = 1;
+            let y = -y;
+        }  
+       } 
+       
+       let i = 0;
+       let shiftx = x;
+
+       while(i<15){
+         if(Math.bit(y,i) = true){
+            let sum = sum + shiftx;
+         }
+        let i = i + 1;
+        let shiftx = shiftx + shiftx;
+       }
+
+       if(negative = 1){
+         return -sum;}
+       else{
+        return sum;}
+    }
+
+    /** Returns the integer part of x/y.
+     *  When a Jack compiler detects the multiplication operator '/' in the 
+     *  program's code, it handles it by invoking this method. In other words,
+     *  the Jack expressions x/y and divide(x,y) return the same value.
+     */
+
+     //this function divide absolute values
+     function int dividePosNums(int x, int y)
+     {
+        var int q;
+
+        // handle the overflow by check 
+        if( (y>x) | (y<0) ){
+            return 0;
+        }
+       
+        let q = Math.dividePosNums(x, (y+y));
+        let q = q + q;
+        
+        if((x - Math.multiply(q,y)) < y)
+        {return q;}
+        else
+        {return (q+1); }
+     }
+
+    function int divide(int x, int y) {
+    //determine the result sign and divide(|x| / |y|)
+        var int negative;
+        var int result;
+
+        let negative = 0;
+        //check if x is negative
+        if(x<0){
+            let negative = 1;
+            let x = -x;
+        }
+        //check if y negative 
+        if(y<0){
+            let negative = 1;
+            let y = -y;
+        }
+        let result = Math.dividePosNums(x, y);
+
+        //assign sign to the result
+        if(negative = 1)
+        {return -result;}
+        else
+        {return result;}
+    }
+
+    /** Returns the integer part of the square root of x. */
+    function int getn(int x)
+    {
+        var int i;
+
+        let i = 0;
+        while(i<15)
+        {
+            if(x = twoTothe[i])
+            {return i + 2;}
+            else
+            {
+                if(x<twoTothe[i])
+                {return i + 1;}
+            }
+            let i = i + 1;
+        }
+        return i+1;
+    }
+
+    function int sqrt(int x) {
+        var int i, n, val, y, condval;
+
+        let y = 0;
+        let n = Math.getn(x);
+        let i = Math.divide(n, 2) - 1;
+
+        while((i>0) | (i = 0))
+        {
+            // val = y + 2^i
+            let val = y + twoTothe[i];
+            let condval = Math.multiply(val, val);
+            if(((condval<x) | (condval = x)) & (condval>0))
+            { let y = val; }
+            let i = i - 1;
+        }
+        return y;
+    }
+
+    /** Returns the greater number. */
+    function int max(int a, int b) {
+        if(a<b){
+        return b;}
+        else{
+        return a;}
+    }
+
+    /** Returns the smaller number. */
+    function int min(int a, int b) {
+        if(a<b){
+        return a;}
+        else{
+        return b;}
+    }
+}
