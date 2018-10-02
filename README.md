@@ -10,6 +10,6 @@ this course (2 parts) is a journey of building semi computer from nand gate to t
 ### 5- compiler from the toknizer, sysntax analyser, vm translator, assembler
 ### 6- main functions of OS
 
-#courses
+# courses
 ## [part1](https://www.coursera.org/learn/build-a-computer)
 ## [part2](https://www.coursera.org/learn/nand2tetris2/)
